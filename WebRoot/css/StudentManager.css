@@ -1,0 +1,102 @@
+@CHARSET "UTF-8";
+#operate{
+padding: 3px 8px;
+clear: both;
+background-color: #E9F0F4;
+}
+div.jqmNotice img.jqResize {position: absolute; right: 2px; bottom: 2px;}
+
+div.jqmNotice {
+    display: none;
+    
+    position: absolute;
+    
+    width: 500px;
+  background:#FFFFCC url(notice/note_icon.png) 5px 5px no-repeat;
+    border: 1px solid #000;
+   left: 400px;
+    height: 300px;
+}
+
+div.addDivTitle{
+	margin: 0 25px;
+}
+div.detailDivTitle{
+	margin: 0 25px;
+}
+  
+div.addDivTitle h1{
+  margin: 5px 0;
+  padding-left:5px;
+  width: 100%;
+  
+  font-size:15px;
+  color:#FFFFCC;
+  background-color:#505050;
+}
+div.detailDivTitle h1{
+  margin: 5px 0;
+  padding-left:5px;
+  width: 100%;
+  
+  font-size:15px;
+  color:#FFFFCC;
+  background-color:#505050;
+}
+div.jqmNotice .jqmClose {
+  position: absolute;
+  cursor: pointer;
+  right: 4px;
+  top: 6px;
+  width: 15px;
+}
+
+div.addDivContent{
+  border-top:1px;
+  color:#000;
+  font:12px/18pt Comic Sans, Comic Sans MS, cursive;
+  padding:0 20px 5px;
+}
+div.detailDivContent{
+  border-top:1px;
+  color:#000;
+  font:12px/18pt Comic Sans, Comic Sans MS, cursive;
+  padding:0 20px 5px;
+}
+td.left{
+	text-align: right;
+}
+tr.newCourseTr{
+	height: 35px;
+}
+#main div.student{
+margin: 10px 30px 0px 30px;
+border: solid;
+height: 80px;
+width: 280px;
+float: left;
+padding: 10px;
+border-width: 3px;
+border-color: gray;
+}
+
+#bottom{
+
+height: 30px;
+width: 1083px;
+line-height: 30px;
+padding: 3px 8px;
+clear: both;
+border-bottom: 1px solid #D8DEEA;
+background-color: #E9F0F4;
+position: fixed;
+bottom: 0px;
+}
+#bottom li{
+line-height: 18px;
+float: left;
+padding: 2px 5px;
+margin-left: 5px;
+cursor: pointer;
+border: 1px solid #CCC;
+}

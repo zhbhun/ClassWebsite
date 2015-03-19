@@ -1,0 +1,25 @@
+/* CSS Document */
+html, body {overflow:hidden}
+body, h1, h2, h3, h4, h5, h6, p, ul, dl, ol {margin:0; padding:0}
+li {list-style:none}
+body {height:100%; color: #fff; font: 14px/1.5 'ChunkFive Regular', Arial, Helvetica, sans-serif;}
+.mask {position: absolute; background:#000; width: 100%; height:100%; left:0; top: 0; z-index:999}
+#start {position: absolute; color:#000; font-size:50px; top: 45%; opacity:0; filter:alpha(opacity=0)}
+.bg {
+	position:absolute;
+	left:0;
+	height:100%;
+	width: 100%;
+	background-image: url(../specialProductImage/product1/0.jpg);
+	background-position: 50% 50%;
+}
+#menu dl {padding: 14px 8px 2px 8px}
+#menu {position: absolute; background: #000; font-size: 30px; left: 100px;top:120px; overflow:hidden;height:0; width:176px; z-index:1000}
+#menu dd {font-weight: bold; cursor:pointer; height: 44px;overflow:hidden; position:relative}
+#menu dd ul {position: absolute;left:0;top:0}
+.color-1 {color:#d61565}
+.color-2 {color:#555;}
+.info {position: absolute; width: 300px; left:300px; top: 120px;padding:14px 10px;background: #000;overflow:hidden;width:0;height:30px;display:none;z-index:1000}
+.fs-12 {font-size:12px}
+#waiting {left: 46%; top:46%;font-size:40px; color:#999;position:absolute}
+

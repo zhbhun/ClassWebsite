@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+div.comment{
+margin: 10px 30px 0px 30px;
+border: solid;
+padding: 10px;
+height: 60px;
+border-width: 3px;
+border-color: gray;
+font: 12px tahoma, Arial, "宋体", Verdana, sans-serif;
+width: 500px;
+float: left;
+}

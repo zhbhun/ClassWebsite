@@ -1,0 +1,47 @@
+@CHARSET "UTF-8";
+#mainInformation{
+  width: 1300px;
+  height:100%;
+  font: 12px tahoma, Arial, "宋体", Verdana, sans-serif;
+}
+#softInformation{
+  width:500px;
+   height: 220px;
+  border: 1px solid #C9DFF5;
+  float:left;
+  margin-right: 50px;
+  margin-bottom: 20px;
+}
+#systemInformation{
+    width:500px;
+   height: 220px;
+    border: 1px solid #C9DFF5;
+    float:left;
+   margin-bottom: 20px;
+}
+#statisticsInformation{
+   width:700px;
+  height: 271px;
+   border: 1px solid #C9DFF5;
+   float:left;
+   clear: both;
+   margin-left: 200px;
+}
+.messageTitle{
+	height: 30px;
+line-height: 30px;
+padding: 0px 10px;
+color: #444;
+text-align: left;
+background: url(../images/admin_x_bg.gif) 0px -60px repeat-x;
+font: 20px tahoma, Arial, "宋体", Verdana, sans-serif;
+width: 500px;
+}
+.messageItem{
+	height: 30px;
+	line-height: 30px;
+text-align: left;
+padding-left: 10px;
+border-bottom: 1px dotted #D0DDE5;
+font: 15px tahoma, Arial, "宋体", Verdana, sans-serif;
+}

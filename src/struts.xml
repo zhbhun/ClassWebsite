@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.objectFactory" value="spring"/>
+	<constant name="struts.i18n.encoding" value="UTF-8"/>
+	<constant name="struts.configration.xml.reload" value="true"/>
+	<constant name="struts.devMode" value="true"/>
+	<constant name="struts.ui.theme" value="simple"/>
+	<constant name="struts.serve.static.browserCache" value="false"/>
+	<constant name="struts.multipart.saveDir" value="/images"/>
+	<constant name="struts.multipart.maxSize" value="15097152"></constant>
+	
+ 
+<package name="base" extends="struts-default" namespace="/base">
+	  <global-results>
+	    <result name="error">/WEB-INF/error.jsp</result>
+	  </global-results>
+	</package>
+	
+	<!-- 全局性commmon包 -->
+	<package name="/action" extends="base" namespace="/">
+	    <action name="administratorAction_*" class="administratorAction" method="{1}">
+	    	
+	    </action>
+	     <action name="albumAction_*" class="albumAction" method="{1}">
+	    	<result name="admin_albumlist">/manager/AlbumList.jsp</result>
+	    	<result name="album_list">Class_album.jsp</result>
+	    	<result  name="addalbum_result" type="redirect">albumAction_getAlbumForAdmin</result>
+	    	<result  name="change_result" type="redirect">albumAction_changeAlbumpage?page.currentPage=${page.currentPage}</result>
+	    	<result  name="delete_result" type="redirect">albumAction_changeAlbumpage?page.currentPage=${page.currentPage}</result>
+	    </action>
+	     <action name="courseAction_*" class="courseAction" method="{1}">
+	    		<result name="add_result" type="redirect">courseAction_getCoursesForAdmin</result>
+	    	<result name="admin_courselist">/manager/CourseList.jsp</result>
+	        <result  name="delete_result" type="redirect">courseAction_changeCoursesPage?page.currentPage=${page.currentPage}</result>
+	         <result  name="change_result" type="redirect">courseAction_changeCoursesPage?page.currentPage=${page.currentPage}</result>
+	    </action>
+	     <action name="informCommentAction_*" class="informCommentAction" method="{1}">
+	    	 <result name="comment">/Class_informComment.jsp</result>
+			 <result name="informCommentForAdmin">/manager/InformCommend.jsp</result>
+	    	
+	    </action>
+	     <action name="jobAction_*" class="jobAction" method="{1}">
+	    	
+	    </action>
+	     <action name="linkAction_*" class="linkAction" method="{1}">
+	         <result name="informAdd">/Class_informComment.jsp</result>
+			  <result name="add_result" type="redirect">linkAction_getLinkForAdmin</result>
+	    	<result name="admin_linklist">/manager/LinkManager.jsp</result>
+	    	 <result  name="delete_result" type="redirect">linkAction_changeLinkPage?page.currentPage=${page.currentPage}</result>
+	    	  <result  name="change_result" type="redirect">linkAction_changeLinkPage?page.currentPage=${page.currentPage}</result>
+	    </action>
+	     <action name="photoAction_*" class="photoAction" method="{1}">
+	    	<result name="admin_photolist_album">/manager/PhotoList.jsp</result>
+	    	<result name="photolist_album">/Class_photo.jsp</result>
+	    	<result  name="delete_result" type="redirect">photoAction_changePhotoPage?page.currentPage=${page.currentPage}</result>
+	    	<result name="admin_photo">/manager/Photo.jsp</result>
+	    	
+	    </action>
+	     <action name="photoCommendAction_*" class="photoCommendAction" method="{1}">
+	    	
+	    </action>
+	     <action name="shareAction_*" class="shareAction" method="{1}">
+	    	<result name="admin_sharelist">/manager/ShareManage.jsp</result>
+	    	<result name="user_sharelist">/Class_source.jsp</result>
+	        <result  name="delete_result" type="redirect">shareAction_changeSharePage?page.currentPage=${page.currentPage}</result>
+	        <result name="add_result" type="redirect">studentAction_inform</result>
+	    </action>
+	     <action name="messageAction_*" class="messageAction" method="{1}">
+	    	<result name="message">/Class_message.jsp</result>
+			<result name="admin_messagelist">/manager/MessageManage.jsp</result>
+	    	<result name="delete_result" type="redirect">messageAction_getMessageForAdmin?page.currentPage=1</result>
+	    </action>
+	    <action name="banjiAction_*" class="banjiAction" method="{1}">
+	    	<result name="success">/Class_intro.jsp</result>
+			<result name="admin_banji">/manager/ClassManager.jsp</result>
+	    	<result name="admin_change_banji">/manager/ChangeClass.jsp</result>
+	    	<result name="change_result">/manager/ChangeClass.jsp</result>
+	    </action>
+	    <action name="studentAction_*" class="studentAction" method="{1}">
+	    	<result name="leader">/Class_intro.jsp</result>
+	    	<result name="cards">/Class_member.jsp</result>
+	    	<result name="inform">/Class_person.jsp</result>
+	    	<result name="modify">/Class_person.jsp</result>
+	    	<result name="main">/index.jsp</result>
+			<result name="admin_studentlist">/manager/StudentManager.jsp</result>
+	    	<result name="add_result" type="redirect">studentAction_getStudentForAdmin</result>
+	    	 <result  name="delete_result" type="redirect">studentAction_changeStudentPage?page.currentPage=${page.currentPage}</result>
+	    </action>
+	     <action name="informAction_*" class="informAction" method="{1}">
+	     
+	    	<result name="inform">/Class_inform.jsp</result>
+	    	<result name="comment">/Class_informComment.jsp</result>
+			<result name="informManager">/manager/InformManager.jsp</result>
+	    	<result name="admin_informlist">/manager/InformList.jsp</result>
+	    	<result name="addInform">/manager/AddInform.jsp</result>
+	    	<result name="addinform_result">/manager/AddInform.jsp</result>
+	    	<result name="changeInform">/manager/EditInform.jsp</result>
+	    	<result name="change_result">/manager/EditInform.jsp</result>
+	    	<result  name="delete_result" type="redirect">informAction_getInformsByTimeAndPageForManager?page.currentPage=1</result>
+	    </action>
+	</package>
+	<package name="jsonAction" extends="json-default" namespace="/json">
+	   <action name="albumAction_accessChangeAlbum" class="albumAction" method="accessChangeAlbum">
+	    	<result type="json" name="success">
+	    	  <param name="includeProperties">album.*</param>
+			</result>
+	    </action>
+	    <action name="courseAction_accessChangeCourse" class="courseAction" method="accessChangeCourse">
+	    	<result type="json" name="success">
+	    	  <param name="includeProperties">course.*</param>
+			</result>
+	    </action>
+	    
+	     <action name="linkAction_accessChangeLink" class="linkAction" method="accessChangeLink">
+	    	<result type="json" name="success">
+			</result>
+	    </action>
+	    <action name="StudentAction_getStudentByIdToJson" class="studentAction" method="getStudentByIdToJson">
+	    	<result type="json" name="success">
+			</result>
+	    </action>
+	    <action name="StudentAction_changeJob" class="studentAction" method="changeJob">
+	    	<result type="json" name="success">
+			</result>
+	    </action>
+	</package>
+</struts>    

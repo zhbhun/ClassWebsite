@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/class">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="zhenkun"></property>
+	</bean>
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.hbm2ddl">false</prop>
+
+				<prop key="hibernate.generate_statistics">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.use_second_level_cache">
+					true
+				</prop>
+				<prop key="hibernate.cache.provider_class">
+					org.hibernate.cache.EhCacheProvider
+				</prop>
+				<prop key="hibernate.cache.configurationResourceName">
+					ehcache.xml
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>
+					com/hibernate/domain/Administrator.hbm.xml
+				</value>
+				<value>com/hibernate/domain/Student.hbm.xml</value>
+				<value>com/hibernate/domain/Course.hbm.xml</value>
+				<value>com/hibernate/domain/Album.hbm.xml</value>
+				<value>
+					com/hibernate/domain/InformComment.hbm.xml
+				</value>
+				<value>com/hibernate/domain/Share.hbm.xml</value>
+				<value>com/hibernate/domain/Photo.hbm.xml</value>
+				<value>com/hibernate/domain/Inform.hbm.xml</value>
+				<value>com/hibernate/domain/Job.hbm.xml</value>
+				<value>com/hibernate/domain/Link.hbm.xml</value>
+				<value>com/hibernate/domain/Message.hbm.xml</value>
+				<value>com/hibernate/domain/PhotoComment.hbm.xml</value>
+				<value>com/hibernate/domain/Banji.hbm.xml</value></list>
+		</property>
+		</bean>
+	
+	<!-- 配置hibernate的DAO -->
+	<bean id="AdministratorDAO"
+		class="com.hibernate.dao.AdministratorDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="AlbumDAO"
+		class="com.hibernate.dao.AlbumDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="BanjiDAO"
+		class="com.hibernate.dao.BanjiDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean><bean id="CourseDAO"
+		class="com.hibernate.dao.CourseDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean><bean id="InformCommentDAO"
+		class="com.hibernate.dao.InformCommentDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean><bean id="InformDAO"
+		class="com.hibernate.dao.InformDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean><bean id="JobDAO"
+		class="com.hibernate.dao.JobDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean><bean id="LinkDAO"
+		class="com.hibernate.dao.LinkDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean><bean id="MessageDAO"
+		class="com.hibernate.dao.MessageDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean><bean id="PhotoCommentDAO"
+		class="com.hibernate.dao.PhotoCommentDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="PhotoDAO"
+		class="com.hibernate.dao.PhotoDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="ShareDAO"
+		class="com.hibernate.dao.ShareDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="StudentDAO"
+		class="com.hibernate.dao.StudentDAO">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- 配置提供服务的bean -->
+	<bean id="administratorBean" class="com.spring.service.AdministratorBean">
+	<property name="administratorDAO" ref="AdministratorDAO"></property>
+	</bean>
+	<bean name="albumBean" class="com.spring.service.AlbumBean">
+	<property name="albumDAO" ref="AlbumDAO"></property>
+	</bean>
+	
+	<bean id="banjiBean"
+		class="com.spring.service.BanjiBean">
+		<property name="banjiDAO" ref="BanjiDAO" />
+	</bean>
+	<bean name="courseBean" class="com.spring.service.CourseBean">
+	<property name="courseDAO" ref="CourseDAO"></property>
+	</bean>
+	<bean name="informCommentBean" class="com.spring.service.InformCommentBean">
+	<property name="informCommentDAO" ref="InformCommentDAO"></property>
+	</bean>
+	<bean name="jobBean" class="com.spring.service.JobBean">
+	<property name="jobDAO" ref="JobDAO"></property>
+	</bean>
+	<bean name="linkBean" class="com.spring.service.LinkBean">
+	<property name="linkDAO" ref="LinkDAO"></property>
+	</bean>
+	<bean name="messageBean" class="com.spring.service.MessageBean">
+	<property name="messageDAO" ref="MessageDAO"></property>
+	</bean>
+	<bean name="photoBean" class="com.spring.service.PhotoBean">
+	<property name="photoDAO" ref="PhotoDAO"></property>
+	</bean>
+	<bean name="photoCommentBean" class="com.spring.service.PhotoCommentBean">
+	<property name="photoCommentDAO" ref="PhotoCommentDAO"></property>
+	</bean>
+	<bean name="shareBean" class="com.spring.service.ShareBean">
+	<property name="shareDAO" ref="ShareDAO"></property>
+	</bean>
+	<bean id="studentBean"
+		class="com.spring.service.StudentBean">
+		<property name="studentDAO" ref="StudentDAO" />
+	</bean>
+	<bean id="informBean"
+		class="com.spring.service.InformBean">
+		<property name="informDAO" ref="InformDAO" />
+	</bean>
+	
+	
+	<!-- 配置struts的action -->
+	<bean id="banjiAction"
+		class="com.struts.action.BanjiAction"
+		scope="prototype">
+		<property name="banjiBean" ref="banjiBean" />
+	</bean>
+	<bean id="administratorAction"
+		class="com.struts.action.AdministratorAction"
+		scope="prototype">
+		<property name="administratorBean" ref="administratorBean" />
+	</bean>
+	<bean id="albumAction"
+		class="com.struts.action.AlbumAction"
+		scope="prototype">
+		<property name="albumBean" ref="albumBean" />
+	</bean>
+	<bean id="courseAction"
+		class="com.struts.action.CourseAction"
+		scope="prototype">
+		<property name="courseBean" ref="courseBean" />
+	</bean>
+	<bean id="informCommentAction"
+		class="com.struts.action.InformCommentAction"
+		scope="prototype">
+		<property name="informCommentBean" ref="informCommentBean" />
+		<property name="informBean" ref="informBean" />
+	</bean>
+	<bean id="jobAction"
+		class="com.struts.action.JobAction"
+		scope="prototype">
+		<property name="jobBean" ref="jobBean" />
+	</bean>
+	<bean id="linkAction"
+		class="com.struts.action.LinkAction"
+		scope="prototype">
+		<property name="linkBean" ref="linkBean" />
+	</bean>
+	<bean id="messageAction"
+		class="com.struts.action.MessageAction"
+		scope="prototype">
+		<property name="messageBean" ref="messageBean" />
+	</bean>
+	<bean id="photoAction"
+		class="com.struts.action.PhotoAction"
+		scope="prototype">
+		<property name="photoBean" ref="photoBean" />
+	</bean>
+	
+	<bean id="photoCommendAction"
+		class="com.struts.action.PhotoCommendAction"
+		scope="prototype">
+		<property name="photoCommentBean" ref="photoCommentBean" />
+	</bean>
+	<bean id="shareAction"
+		class="com.struts.action.ShareAction"
+		scope="prototype">
+		<property name="shareBean" ref="shareBean" />
+	</bean>
+	<bean id="studentAction"
+		class="com.struts.action.StudentAction"
+		scope="prototype">
+		<property name="studentBean" ref="studentBean" />
+		<property name="jobBean" ref="jobBean" />
+		<property name="banjiBean" ref="banjiBean" />
+	</bean>
+	
+	<bean id="informAction"
+		class="com.struts.action.InformAction"
+		scope="prototype">
+		<property name="informBean" ref="informBean" />
+	</bean>
+	
+	
+</beans>

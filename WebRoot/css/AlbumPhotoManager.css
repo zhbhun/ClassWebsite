@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+
+#top{
+
+}
+#operate{
+padding: 3px 8px;
+clear: both;
+background-color: #E9F0F4;
+}
+#middle{
+	
+}
+#bottom{
+	
+}
+#listTable th {
+height: 24px;
+line-height: 24px;
+text-align: left;
+color: #5B5B5B;
+font-weight: normal;
+border-top: solid 1px #D8DEEA;
+border-bottom: solid 1px #C6C9CA;
+border-right: solid 1px #C6C9CA;
+background: url(../images/admin_bg.gif) 0px -60px repeat-x;
+padding-left: 10px;
+}
+#listTable .sort {
+height: 24px;
+line-height: 24px;
+display: block;
+outline: none;
+font-size: 12px;
+font-family: "Microsoft YaHei";
+color: #666;
+}
+#listTable .c1{
+width: 50px;	
+}
+#listTable .c2{
+width: 200px;	
+}
+#listTable .c3{
+width: 50px;	
+}
+#listTable .c4{
+width: 100px;	
+}
+#listTable .c4{
+background-color: #FFF8E4;
+}
+#listTable td.c4 a {
+	color: #369;
+}
+#listTable td.c4 a:hover {
+color: #F60;
+text-decoration: none;
+}

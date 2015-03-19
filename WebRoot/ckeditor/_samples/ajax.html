@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+Copyright (c) 2003-2011, CKSource - Frederico Knabben. All rights reserved.
+For licensing, see LICENSE.html or http://ckeditor.com/license
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>留言</title>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+	<script type="text/javascript" src="../ckeditor.js"></script>
+	<script type="text/javascript">
+	//<![CDATA[
+
+var editor, html = '';
+
+function createEditor()
+{
+	if ( editor )
+		return;
+
+
+	// Create a new editor inside the <div id="editor">, setting its value to html
+	var config = {};
+	editor = CKEDITOR.appendTo( 'editor', config, html );
+}
+
+function removeEditor()
+{
+	if ( !editor )
+		return;
+
+	// Retrieve the editor contents. In an Ajax application, this data would be
+	// sent to the server or used in any other way.
+	document.getElementById( 'editorcontents' ).innerHTML = html = editor.getData();
+	document.getElementById( 'contents' ).style.display = '';
+
+	// Destroy the editor.
+	editor.destroy();
+	editor = null;
+}
+
+	//]]>
+	</script>
+</head>
+<body>
+	<p>
+		<input onclick="createEditor();" type="button" value="留言" />
+		<input onclick="removeEditor();" type="button" value="关闭留言" />
+	</p>
+	<!-- This div will hold the editor. -->
+	<div id="editor">
+	</div>
+	<div id="contents" style="display: none">
+		<p>
+		<!-- This div will be used to display the editor contents. -->
+		<div id="editorcontents">
+		</div>
+	</div>
+	
+</body>
+</html>

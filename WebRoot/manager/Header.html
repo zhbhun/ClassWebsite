@@ -1,0 +1,44 @@
+﻿
+
+		<div class="body">	
+			<div class="bodyLeft">	
+			     <table style='font: 15px tahoma, Arial,  Verdana, sans-serif;margin-left: 15px;'>
+			     <tr><td>山东大学</td></tr>
+			     <tr><td>软件工程专业</td></tr>
+			     <tr><td>09级3班</td></tr>
+			     </table>
+				<!-- <div class="logo"></div>	 -->
+			</div>	
+			<div class="bodyRight">		
+				<div class="link" align="center">			
+					<span class="welcome"><strong>admin</strong>&nbsp;您好!&nbsp;	</span>	
+					<a href="manager/ManagerIndex.jsp" >后台首页</a>			
+				</div>		
+			    <div id="menu" class="menu">				
+			        <ul>						
+			         <li class="menuItem" onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+			         <a href="informAction_accessInformManager" >通知管理</a>
+			             <ul style="display: none;list-style: none; background-image: url(../images/admin_bg.gif);"> 
+                        <li ><a style="position:absolute;z-index: 100;background-color: #ECF5FF" href="informAction_getInformsByTimeAndPageForManager?page.currentPage=1">通知列表</a></li> 
+                        <li ><a style="position:absolute;z-index: 100;background-color: #ECF5FF" href="informAction_accessAddInformJsp">发布通知</a></li>
+                        </ul> 
+			         </li>	
+			         <li class="menuItem"><a href="messageAction_getMessageForAdmin?page.currentPage=1" >留言管理</a></li>		
+			         <li class="menuItem"><a href="albumAction_getAlbumForAdmin"  >相册管理</a></li>						
+			         <li class="menuItem" > <a href="courseAction_getCoursesForAdmin" >课程表管理</a></li>						
+			         <li class="menuItem" onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+			         <a href="shareAction_getShareForAdmin"  >分享管理</a>
+			         </li>
+                     <li class="menuItem"><a href="banjiAction_getBanjiForAdmin"  >班级信息管理</a></li>
+                     <li class="menuItem"><a href="linkAction_getLinkForAdmin" >友情链接管理</a></li>	
+                     <li class="menuItem"><a href="studentAction_getStudentForAdmin" >班级成员管理</a></li>	
+                     <li class="home"><a href="/" target="_blank" >网站首页</a></li>	
+                         
+                    </ul>	            
+                    <div class="info">					
+                    <a class="logout" href="/admin/logout" target="_top">退出</a>				
+                    </div>			
+                 </div>		
+              </div>	
+       </div>
+  

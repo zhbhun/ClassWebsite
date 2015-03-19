@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+.menubar{
+float: left;
+width: 270px;
+}
+.introduction{
+width: 100%;
+height: 30px;
+line-height: 30px;
+}

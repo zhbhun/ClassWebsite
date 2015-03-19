@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="euc-kr"?>
+<URL>
+
+<Image_Information>
+		<img_name>image01</img_name>
+		<img_link>specialProduct.html</img_link>
+		<thumb_image>images/main/0.jpg</thumb_image>
+	</Image_Information>
+
+<Image_Information>
+		<img_name>image02</img_name>
+		<img_link>specialProduct.html</img_link>
+		<thumb_image>images/main/1.jpg</thumb_image>
+	</Image_Information>
+
+<Image_Information>
+		<img_name>image03</img_name>
+		<img_link>specialProduct.html</img_link>
+		<thumb_image>images/main/2.jpg</thumb_image>
+	</Image_Information>
+
+<Image_Information>
+		<img_name>image04</img_name>
+		<img_link>specialProduct.html</img_link>
+		<thumb_image>images/main/3.jpg</thumb_image>
+	</Image_Information>
+
+<Image_Information>
+		<img_name>image05</img_name>
+		<img_link>specialProduct.html</img_link>
+		<thumb_image>images/main/4.jpg</thumb_image>
+	</Image_Information>
+
+<Image_Information>
+		<img_name>image06</img_name>
+		<img_link>specialProduct.html</img_link>
+		<thumb_image>images/main/5.jpg</thumb_image>
+	</Image_Information>
+	
+	<Image_Information>
+		<img_name>image07</img_name>
+		<img_link>specialProduct.html</img_link>
+		<thumb_image>images/main/6.jpg</thumb_image>
+	</Image_Information>
+	
+<Image_Information>
+		<img_name>image08</img_name>
+		<img_link>specialProduct.html</img_link>
+		<thumb_image>images/main/product1/7.jpg</thumb_image>
+	</Image_Information>
+	
+<Image_Information>
+		<img_name>image09</img_name>
+		<img_link>specialProduct.html</img_link>
+		<thumb_image>images/main/8.jpg</thumb_image>
+	</Image_Information>	
+	
+<Image_Information>
+		<img_name>image10</img_name>
+		<img_link>specialProduct.html</img_link>
+		<thumb_image>images/main/9.jpg</thumb_image>
+	</Image_Information>
+	
+
+	
+</URL>
